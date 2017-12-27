@@ -1,0 +1,62 @@
+
+<ui:composition template="padrao_coordenador.xhtml" 
+xmlns="http://www.w3.org/1999/xhtml" 
+ xmlns:h="http://java.sun.com/jsf/html"  
+ xmlns:ui="http://java.sun.com/jsf/facelets"
+ xmlns:p = "http://primefaces.org/ui"
+ xmlns:f = "http://java.sun.com/jsf/core"> 
+
+<ui:define name="titulo">
+	Membros Cadastrados
+</ui:define>
+
+ <ui:define name="corpo-da-pagina">
+	<br/> <br/>
+	<p:growl></p:growl>
+	<p:dataTable var="usuario" value="#{listaUsuario.usuariosCadastrados}">
+	
+    <p:column headerText="Nome">
+        <h:outputText value="#{usuario.nome}" />
+    </p:column>
+ 
+    <p:column headerText="Matrícula">
+        <h:outputText value="#{usuario.matricula}" />
+    </p:column>
+ 
+    <p:column headerText="Cidade">
+        <h:outputText value="#{usuario.cidade}" />
+    </p:column>
+ 
+    <p:column headerText="RG">
+        <h:outputText value="#{usuario.rg}" />
+    </p:column>
+    
+    <p:column headerText="CPF">
+        <h:outputText value="#{usuario.cpf}" />
+    </p:column>
+    
+    <p:column headerText="Email">
+        <h:outputText value="#{usuario.email}" />
+    </p:column>
+    
+    <p:column headerText="Celular">
+        <h:outputText value="#{usuario.celular}" />
+    </p:column>
+    
+    <p:column headerText="Conta">
+        <h:outputText value="#{usuario.conta}" />
+    </p:column>
+    
+    <p:column headerText="Agência">
+        <h:outputText value="#{usuario.agencia}" />
+    </p:column>
+    
+    <p:column headerText="Operação">
+        <h:outputText value="#{usuario.operacao}" />
+    </p:column>
+   
+    
+</p:dataTable>
+	
+	</ui:define>
+</ui:composition>	

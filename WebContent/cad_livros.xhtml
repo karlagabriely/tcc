@@ -1,0 +1,60 @@
+
+<ui:composition template="padrao_coordenador.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<ui:define name="titulo">
+	 Insira o livro que deseja disponibilizar.
+	</ui:define>
+
+	<ui:define name="corpo-da-pagina">
+	<h:form enctype="multipart/form-data">  
+	<br/> <br/> 
+		<p:growl></p:growl>
+		
+		<div class="row">
+    		<div class="col-lg-4 col-lg-offset-4">
+		
+				<div class="text-center">
+			        <div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1" > Título:</span>
+					  <p:inputText id="ignored1" required="true" styleClass="form-control"  
+					   value="#{cadastrarLivrosMBean.livro.nome}" aria-describedby="basic-addon1"
+					   requiredMessage="Informe o título do livro!">
+					   <f:validateLength minimum = "5" maximum = "100" />
+					  </p:inputText> 
+					</div>
+					<br/>
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon2" > Autor:</span>
+					  <p:inputText id="ignored2" required="true" styleClass="form-control"  
+					   value="#{cadastrarLivrosMBean.livro.autor}" aria-describedby="basic-addon2"
+					   requiredMessage="Informe o autor do livro!">
+					  <f:validateLength minimum = "5" maximum = "100" />
+					  </p:inputText> 
+					</div>
+					<br/>
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon3" > Descrição:</span>
+					  <p:inputTextarea id="ignored3" required="true" styleClass="form-control"  
+					   value="#{cadastrarLivrosMBean.livro.descricao}" aria-describedby="basic-addon2"
+					   requiredMessage="Informe a descrição do livro!">
+					   <f:validateLength minimum = "20" maximum = "500" />
+					   </p:inputTextarea>
+					</div>
+					<br/>
+					<p:fileUpload mode="simple" value="#{cadastrarLivrosMBean.livro.arquivo}" 
+       				aria-describedby="addonFoto" style="margin-left: 143px; margin-top: 42px;"/>
+       				<br/>
+					<p:commandButton value="#{cadastrarLivrosMBean.livro.id == 0 ? 'Cadastrar' : 'Editar'}" 
+					    		styleClass="btn btn-primary"
+								action="#{cadastrarLivrosMBean.cadastrarLivro}" ajax="false"/>
+				</div>
+			</div>
+		</div>
+	</h:form>		
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,87 @@
+<ui:composition template="padrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<ui:define name="titulo">
+	Modelos de camisas utilizadas.
+</ui:define>
+
+	<ui:define name="corpo-da-pagina">
+
+
+		<br />
+		<br />
+
+		<center>
+			<h4>
+				<span> Ao decorrer dos 7 anos do projeto, estas foram as
+					camisas utilizadas pelos nossos membros nos torneios e eventos que
+					já participamos. </span> <br />
+			</h4>
+
+		</center>
+		<h5>
+			<span style="margin-left: 520px;"><b> Clique na imagem
+					para melhor visualizar </b></span>
+		</h5>
+
+
+
+		<br />
+		<table>
+			<tr>
+
+				<td><h:graphicImage
+						style="width: 300px; height: 300px; margin-left: 100px; "
+						url="imagens/camisa01.png" alt="indisponível" id="img1"
+						onclick="PF('dlg1').show();" /> <p:dialog header="Modelo 2012"
+						widgetVar="dlg1" minHeight="40">
+						<p:graphicImage url="imagens/camisa01.png" width="500" />
+					</p:dialog></td>
+
+				<td><h:graphicImage
+						style="width: 300px; height: 300px; margin-left: 100px; "
+						url="imagens/camisa02.png" alt="indisponível" id="img2"
+						onclick="PF('dlg2').show();" /> <p:dialog header="Modelo 2013"
+						widgetVar="dlg2" minHeight="40">
+						<h:graphicImage url="imagens/camisa02.png" width="500" />
+					</p:dialog></td>
+
+				<td><h:graphicImage
+						style="width: 300px; height: 300px; margin-left: 100px; "
+						url="imagens/camisa03.png" alt="indisponível" id="img3"
+						onclick="PF('dlg3').show();" /> <p:dialog header="Modelo 2014"
+						widgetVar="dlg3" minHeight="40">
+						<h:graphicImage url="imagens/camisa03.png" width="500" />
+					</p:dialog></td>
+
+			</tr>
+		</table>
+		<table>
+			<tr>
+				<td><h:graphicImage
+						style="width: 300px; height: 300px; margin-left: 300px; "
+						url="imagens/camisa4.png" alt="indisponível" id="img4"
+						onclick="PF('dlg4').show();" /> <p:dialog header="Modelo 2015"
+						widgetVar="dlg4" minHeight="40">
+						<h:graphicImage url="imagens/camisa4.png" width="500" />
+					</p:dialog></td>
+
+				<td><h:graphicImage
+						style="width: 300px; height: 300px; margin-left: 100px; "
+						url="imagens/camisa5.png" alt="indisponível" id="img5"
+						onclick="PF('dlg5').show();" /> <p:dialog header="Modelo 2017"
+						widgetVar="dlg5" minHeight="40">
+						<h:graphicImage url="imagens/camisa5.png" width="500" />
+					</p:dialog></td>
+			</tr>
+		</table>
+
+
+
+
+	</ui:define>
+</ui:composition>

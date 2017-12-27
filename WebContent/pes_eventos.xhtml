@@ -1,0 +1,43 @@
+<ui:composition template="/padrao_coordenador.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+	<ui:define name="titulo">
+	Digite alguma informação do evento que procura
+</ui:define>
+
+	<ui:define name="corpo-da-pagina">
+		<br />
+		<br />
+
+		<h:form>
+			<p:growl></p:growl>
+			<b style="margin-left: 400px; margin-right: 400px;"> Informe o nome ou local do evento que procura</b>
+			<br />
+			<br />
+			<div class="input-group"
+				style="margin-left: 400px; margin-right: 400px;">
+				<span class="input-group-addon" id="basic-addon1"
+					style="margim-left: 50px"> Informação:</span>
+				<p:inputText id="ignored1" required="true" styleClass="form-control"
+					value="#{pes_EventoMBean.pes_Evento}"
+					aria-describedby="basic-addon1"
+					requiredMessage="Forneça alguma informação." />
+			</div>
+			<br />
+			<center>
+			<p:commandButton value="Pesquisar" styleClass="btn btn-primary"
+				action="#{pes_EventoMBean.pesquisarEvento}" ajax="false" /> </center>
+		</h:form>
+		
+		<ui:repeat var="artigo" value="#{ pes_EventoMBean.evento}">
+			<h:outputLabel value="#{ evento.nome }" />
+		</ui:repeat>
+
+
+	</ui:define>
+</ui:composition>

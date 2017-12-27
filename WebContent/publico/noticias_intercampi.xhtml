@@ -1,0 +1,32 @@
+
+<ui:composition template="padrao.xhtml" 
+xmlns="http://www.w3.org/1999/xhtml" 
+ xmlns:h="http://java.sun.com/jsf/html"  
+ xmlns:ui="http://java.sun.com/jsf/facelets"
+ xmlns:p = "http://primefaces.org/ui"
+ xmlns:f = "http://java.sun.com/jsf/core"> 
+ 
+<ui:define name="titulo">
+	Notícias do Intercampi
+</ui:define>
+ <ui:define name="corpo-da-pagina">
+	<div class="media-body">
+	</div> <br/> <br/>
+	
+	<div class="list-group" style="margin-left: 400px; margin-right: 400px;">
+	
+		  <a href= "#" class="list-group-item active">
+			Selecione o título:
+		  </a>	  
+		  
+		  <a href="noticias/intercampi2011.pdf" class="list-group-item" target="_blank"> Xadrez é destaque no II Jogos Intercampi - 2011</a>		  	 
+		   
+		   <a href="noticias/intercampi2014.pdf" class="list-group-item" target="_blank">A força do Xadrez no Intercampi do IFRN 2014.  </a>
+		   
+		   <br/>
+		  <center><a href="noticias.xhtml" class="btn btn-primary" role="button">Voltar</a></center>		
+	</div>
+	
+	
+	</ui:define>
+</ui:composition>	

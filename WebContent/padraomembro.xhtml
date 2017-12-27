@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Padrão</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="css/pag_visitante.css" />
+	<link rel="icon" type="image/jpg" href="imagens/fundo.jpg" />
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"
+		media="all" />
+
+	<link rel="stylesheet" type="text/css" href="css/pag_visitante.css" />
+	<link rel="icon" type="image/jpg" href="/imagens/fundo.jpg" />
+
+	<h:outputScript library="primefaces" name="jquery/jquery.js"
+		target="head" />
+	<h:outputScript library="primefaces" name="jquery/jquery-plugins.js"
+		target="head" />
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	
+</h:head>
+<h:body>
+
+	<div id="inicio">
+
+		<div class="media-left">
+			<a href="pag_visitante.xhtml"> <img
+				style="width: 100px; height: 100px; margin-top: 70px;"
+				class="media-object" src="imagens/logo.jpg" alt="indisponível" /></a>
+		</div>
+		<div class="media-body">
+			<h2 style="margin-top: 100px; color: #990000;" class="media-heading">
+
+				<ui:insert name="titulo">  
+					Bem-vindo, Membro/Administrador.
+				</ui:insert>
+			</h2>
+		</div>
+
+	</div>
+	<br />
+	<br />
+	<h:form>
+		<ul class="nav  nav-tabs">
+		
+			
+			<li role="presentation"><a href="publico/pag_visitante.xhtml">Home</a></li>
+			
+			
+			<li role="presentation">
+				<h:commandLink value="Livros"
+					action="#"/>
+			</li>
+			
+			<li role="presentation">
+				<h:commandLink value="Vídeo"
+					action="#"/>
+			</li>
+	
+			<li role="presentation">
+				<h:commandLink value="Presença em torneio"
+					action="#"/>
+			</li>
+	
+			<li role="presentation">
+				<h:commandLink value="Rating"
+					action="#"/>
+			</li>
+			
+			
+			<li role="presentation">
+				<h:commandLink value="Atualizar rating" rendered="#{usuarioLogado.administrador}"
+					action="#"/>
+			</li>
+			
+			<li role="presentation">
+				<h:commandLink value="Acessar dados dos membros" rendered="#{usuarioLogado.administrador}"
+					action="membros.xhtml"/>
+			</li>
+			
+			<li role="presentation">
+				<h:commandLink value="Aprovar vídeos" rendered="#{usuarioLogado.administrador}"
+					action="#"/>
+			</li>
+	
+			<li role="presentation">
+				<h:commandLink value="Atualizar rating" rendered="#{usuarioLogado.administrador}"
+					action="#"/>
+			</li>
+			
+			<li role="presentation">
+				<h:commandLink value="Publicar livros" rendered="#{usuarioLogado.administrador}"
+					action="cad_livros.xhtml"/>
+			</li>
+	
+			<li role="presentation">
+				<h:commandLink value="Alunos confirmados em torneios" rendered="#{usuarioLogado.administrador}"
+					action="#"/>
+			</li>
+	
+			<li role="presentation">
+				<h:commandLink value="Inserir relação de torneios" rendered="#{usuarioLogado.administrador}"
+					action="#l"/>
+			</li>
+	
+			<li role="presentation">
+				<h:commandLink value="Publicar fotos" rendered="#{usuarioLogado.administrador}"
+					action="#"/>
+			</li>
+	
+			<li role="presentation">
+				<h:commandLink value="Publicar notícias" rendered="#{usuarioLogado.administrador}"
+					action="#"/>
+			</li>
+	
+			<li role="presentation">
+				<h:commandLink value="Cadastrar membros" rendered="#{usuarioLogado.administrador}"
+					action="cadastrar.xhtml"/>
+			</li>	
+				
+			<li role="presentation">
+				<h:commandLink action="#{loginMBean.logoff}" value="Logoff" />
+			</li>
+			
+		</ul>
+	</h:form>
+
+	<ui:insert name="corpo-da-pagina"> Espaço para o conteúdo da tela </ui:insert>
+</h:body>
+</html>

@@ -1,0 +1,36 @@
+
+<ui:composition template="padrao.xhtml" 
+xmlns="http://www.w3.org/1999/xhtml" 
+ xmlns:h="http://java.sun.com/jsf/html"  
+ xmlns:ui="http://java.sun.com/jsf/facelets"
+ xmlns:p = "http://primefaces.org/ui"
+ xmlns:f = "http://java.sun.com/jsf/core"> 
+ 
+<ui:define name="titulo">
+	Notícias das Olimpíadas Escolares
+</ui:define>
+ <ui:define name="corpo-da-pagina">
+	<div class="media-body">
+	</div> <br/> <br/>
+	
+	<div class="list-group" style="margin-left: 400px; margin-right: 400px;">
+	
+		  <a href= "#" class="list-group-item active">
+			Selecione o título:
+		  </a>	  
+		  
+		  <a href="noticias/olimpiadas03.pdf" class="list-group-item" target="_blank"> Bronze para o IFRN no xadrez nas 
+		   olimpíadas escolares - 2011 </a>
+		  
+		  <a href="noticias/olimpiadas01.pdf" class="list-group-item" target="_blank"> Delegação de Xadrez do RN nas olimpíadas
+		   escolares será formada por atletas do IFRN - 2012 </a>		  	 
+		   
+		    <a href="noticias/olimpiadas02.pdf" class="list-group-item" target="_blank">Enxadrista do RN obtém o 4º lugar
+		     nas Olimpíadas Escolares - 2012</a>
+		   <br/>
+		  <center><a href="noticias.xhtml" class="btn btn-primary" role="button">Voltar</a></center>	
+	</div>
+	
+	
+	</ui:define>
+</ui:composition>	

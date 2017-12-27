@@ -1,0 +1,66 @@
+
+<ui:composition template="padrao_coordenador.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<ui:define name="titulo">
+	 Digite alguma informação do livro que procura
+	</ui:define>
+
+	<ui:define name="corpo-da-pagina">
+		<br />
+		<br />
+		<h:form>
+			<p:growl></p:growl>
+			<b style="margin-left: 400px; margin-right: 400px;"> Informe o
+				título ou autor ou descrição do livro que procura </b>
+			<br />
+			<br />
+
+			<div class="input-group"
+				style="margin-left: 400px; margin-right: 400px;">
+				<span class="input-group-addon" id="basic-addon1"
+					style="margim-left: 50px"> Informação:</span>
+				<p:inputText id="ignored1" required="true" styleClass="form-control"
+					value="#{pes_LivroMBean.pes_Livro}" aria-describedby="basic-addon1"
+					requiredMessage="Forneça alguma informação." />
+			</div>
+
+			<br />
+			<br />
+			<center>
+				<p:growl id="messages" showDetail="true" />
+
+				<p:commandButton value="Pesquisar" ajax="false"
+					actionListener="#{pes_LivroMBean.pesquisarLivro}" />
+				<br /> <br />
+			</center>
+		</h:form>
+
+		<center>
+			<h:form id="formulario">
+				<p:panel>
+					<h:panelGrid columns="1" cellpadding="5">
+						<ui:repeat var="livro" value="#{ pes_LivroMBean.livro }">
+							<h:outputLabel value="#{ livro.nome }" />
+							<h:commandLink value="Download"
+								action="#{ pes_LivroMBean.urlLivro(livro) }" />
+							<h:commandButton value="Editar"
+								action="#{ cadastrarLivrosMBean.entrarEdicaoLivros(livro) }" />
+
+							<a href="" target="_blank" />
+							<h:commandButton value="Remover">
+
+								<f:ajax event="click" execute="@form" render="formulario"
+									listener="#{ pes_LivroMBean.removerLivro(livro)}" />
+							</h:commandButton>
+						</ui:repeat>
+					</h:panelGrid>
+				</p:panel>
+			</h:form>
+		</center>
+	</ui:define>
+</ui:composition>

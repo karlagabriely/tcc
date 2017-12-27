@@ -1,0 +1,55 @@
+<ui:composition template="/padrao_coordenador.xhtml" 
+xmlns="http://www.w3.org/1999/xhtml" 
+ xmlns:h="http://java.sun.com/jsf/html"  
+ xmlns:ui="http://java.sun.com/jsf/facelets"
+ xmlns:p = "http://primefaces.org/ui"
+ xmlns:f = "http://java.sun.com/jsf/core"> 
+
+
+<ui:define name="titulo">
+	Cadastre o artigo que deseja publicar
+</ui:define>
+
+ <ui:define name="corpo-da-pagina">
+	 <br/> <br/>
+	 
+	 <h:form >   
+			<p:growl></p:growl>
+		
+	        <div class="input-group" style="margin-left: 400px; margin-right: 400px;">
+			  <span class="input-group-addon" id="basic-addon1" style = "margim-left:50px" > Título do artigo:</span>
+			  <p:inputText id="ignored1" required="true" styleClass="form-control"  
+			   value="#{cadastrarArtigosMBean.artigo.titulo}" aria-describedby="basic-addon1" 
+			   requiredMessage="Informe o título do artigo!">
+			   		<f:validateLength minimum = "5" maximum = "100" />
+			   </p:inputText>
+			</div>
+			<br/>
+			<div class="input-group" style="margin-left: 400px; margin-right: 400px;">
+			  <span class="input-group-addon" id="basic-addon2" style = "margim-left:50px"> Autor:</span>
+			  <p:inputText id="ignored2" required="true" styleClass="form-control"  
+			   value="#{cadastrarArtigosMBean.artigo.autor}" aria-describedby="basic-addon1"
+			   requiredMessage="Informe o autor do artigo!">
+			   <f:validateLength minimum = "5" maximum = "100" />
+			   </p:inputText>
+			</div>
+			<br/>
+			<div class="input-group" style="margin-left: 400px; margin-right: 400px;">
+			  <span class="input-group-addon" id="basic-addon3" style = "margim-left:50px"> Resumo:</span>
+			  <p:inputTextarea id="ignored3" required="true" styleClass="form-control"  
+			   value="#{cadastrarArtigosMBean.artigo.resumo}" aria-describedby="basic-addon1"
+			   requiredMessage="Informe o resumo do artigo!">
+			 <f:validateLength minimum = "20" maximum = "500" />
+			 </p:inputTextarea>  
+			</div>
+			<br/>
+			<center>
+			<p:commandButton value="#{cadastrarArtigosMBean.artigo.id == 0 ? 'Cadastrar' : 'Editar'}" 
+			    		styleClass="btn btn-primary"
+						action="#{cadastrarArtigosMBean.cadastrarArtigo}" ajax="false"/>
+			</center>			
+	</h:form>		
+	
+	
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Padrão</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"
+		media="all" />
+
+	<link rel="stylesheet" type="text/css" href="../css/pag_visitante.css" />
+	<link rel="icon" type="image/jpg" href="../imagens/fundo.jpg" />
+
+	<h:outputScript library="primefaces" name="jquery/jquery.js"
+		target="head" />
+	<h:outputScript library="primefaces" name="jquery/jquery-plugins.js"
+		target="head" />
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+
+</h:head>
+<h:body style="background: imagens/teste2.png;">
+
+	<div id="inicio">
+
+		<div class="media-left">
+			<a href="pag_visitante.xhtml"> <img
+				style="width: 100px; height: 100px; margin-top: 70px;"
+				class="media-object" src="../imagens/logo.jpg" alt="indisponível" /></a>
+		</div>
+		<div class="media-body">
+			<h2 style="margin-top: 100px; color: #990000;" class="media-heading">
+
+				<ui:insert name="titulo">  
+					Bem-vindo ao site de xadrez da equipe do IFRN, campus João Câmara
+				</ui:insert>
+			</h2>
+		</div>
+
+	</div>
+	<br />
+	<br />
+	<ul class="nav  nav-tabs">
+	
+
+		<li role="presentation"><a href="pag_visitante.xhtml">Home</a></li>
+
+		<li role="presentation" class="dropdown"><a
+			class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+			aria-haspopup="true" aria-expanded="false"> História <span
+				class="caret"></span>
+		</a>
+			<ul class="dropdown-menu">
+				<li role="presentation"><a href="#">Projeto "Xadrez na
+						região do Mato Grande" </a></li>
+				<li role="presentation"><a href="#"> Torneios </a></li>
+				<li role="presentation"><a href="fotos.xhtml"> Fotos em
+						ordem cronológica </a></li>
+				<li role="presentation"><a href="noticias.xhtml"> Notícias
+						publicadas </a></li>
+			</ul></li>
+
+		<li role="presentation" class="dropdown"><a
+			class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+			aria-haspopup="true" aria-expanded="false"> Equipe <span
+				class="caret"></span>
+		</a>
+			<ul class="dropdown-menu">
+				<li role="presentation"><a href="partidas.xhtml"> Partidas
+						dos membros </a></li>
+				<li role="presentation"><a href="programacao.xhtml">
+						Programação da equipe</a></li>
+				<li role="presentation"><a href="camisas.xhtml"> Modelos
+						das camisas </a></li>
+				<li role="presentation"><a href="curso.xhtml"> Curso para iniciantes </a></li>
+			</ul></li>
+
+
+		<li role="presentation"><a href="artigos.xhtml">Artigos</a></li>
+
+		<li role="presentation"><a href="descricao_projeto.xhtml">Descrição
+				anual do projeto</a></li>
+
+		<li role="presentation" class="dropdown"><a
+			class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+			aria-haspopup="true" aria-expanded="false"> Parceiros na Região <span
+				class="caret"></span>
+		</a>
+			<ul class="dropdown-menu">
+				<li role="presentation"><a href="parceiros/Parceiros_AABB.pdf"
+					target="_blank"> AABB </a></li>
+				<li role="presentation"><a href="parceiros/Parceiros_DIRED.pdf"
+					target="_blank"> DIRED </a></li>
+				<li role="presentation"><a
+					href="parceiros/Parceiros_colegios da regiao.pdf" target="_blank">Colégios
+						da Região </a></li>
+				<li role="presentation"><a
+					href="parceiros/Parceiros_Demais Campi dos IFRN.pdf"
+					target="_blank">Demais campi dos IFRN </a></li>
+				<li role="presentation"><a
+					href="parceiros/Parceiros_Poco Branco.pdf" target="_blank">Poço
+						Branco </a></li>
+			</ul></li>
+
+		<li role="presentation"><a href="relatos.xhtml"> Relatos dos
+				membros </a></li>
+		<li role="presentation"><a
+			href="http://pt.chesstempo.com/chess-tactics.html" target="_blank">Desafio
+				diário</a></li>
+		<li role="presentation"><a href="curiosidades.xhtml"> Curiosidades </a></li>
+		<li role="presentation" class="dropdown"><a
+			class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+			aria-haspopup="true" aria-expanded="false"> Sobre <span
+				class="caret"></span>
+		</a>
+
+			<ul class="dropdown-menu">
+				<li role="presentation"><a href="desenvolvedoras.xhtml">
+						Desenvolvedoras </a></li>
+				<li role="presentation"><a href="homenagem.xhtml">
+						Homenagem ao fundador</a></li>
+			</ul></li>
+			
+		<li role="presentation"><a href="loginmembro.xhtml">Login</a></li>	
+
+	</ul>
+	<ui:insert name="corpo-da-pagina"> Espaço para o conteúdo da tela </ui:insert>
+	<p:growl life="30000" />
+</h:body>
+</html>

@@ -1,0 +1,146 @@
+<ui:composition template="/padrao_coordenador.xhtml" 
+xmlns="http://www.w3.org/1999/xhtml" 
+ xmlns:h="http://java.sun.com/jsf/html"  
+ xmlns:ui="http://java.sun.com/jsf/facelets"
+ xmlns:p = "http://primefaces.org/ui"
+ xmlns:f = "http://java.sun.com/jsf/core"> 
+
+<ui:define name="titulo">
+	Cadastre-se em nosso site.
+</ui:define>
+
+ <ui:define name="corpo-da-pagina">
+	<br/><br/>
+		<h:form >   
+			<p:growl></p:growl>
+		
+	        <div class="input-group" style="margin-left: 400px; margin-right: 400px;">
+			  <span class="input-group-addon" id="basic-addon1" style = "margim-left:50px">Nome Completo:</span>
+			  <p:inputText id="ignored1" required="true" styleClass="form-control"  
+			   value="#{cadastrar.aluno.nome}" aria-describedby="basic-addon1"/>
+			</div>
+		
+	    <br/>    
+	    
+	        <div class="input-group" style="margin-left: 400px; margin-right: 400px;">
+			  <span class="input-group-addon" id="basic-addon2">Matrícula: </span>
+			  <p:inputText id="ignored2" required="true" styleClass="form-control" 
+			  value="#{cadastrar.aluno.matricula}" aria-describedby="basic-addon1"/>
+			</div>
+		
+		
+			
+	    <br/>    
+
+	        <div class="input-group" style="margin-left: 400px; margin-right: 400px;">
+			  <span class="input-group-addon" id="basic-addon3">Cidade: </span>
+			  <p:inputText id="ignored3" required="true" styleClass="form-control"  
+			  value="#{cadastrar.aluno.cidade}" aria-describedby="basic-addon1"/>
+			</div>
+		
+	    <br/>    
+	    
+	        <div class="input-group" style="margin-left: 400px; margin-right: 400px;">
+			  <span class="input-group-addon" id="basic-addon4">RG: </span>
+			  <p:inputText id="ignored4" required="true" styleClass="form-control"  
+			  value="#{cadastrar.aluno.rg}" aria-describedby="basic-addon1"/>
+			</div>
+			
+	    <br/>	    
+
+	    	<div class="input-group" style="margin-left: 400px; margin-right: 400px;">
+			  <span class="input-group-addon" id="basic-addon5">CPF: </span>
+			  <p:inputText id="ignored5" required="true" styleClass="form-control"  
+			  value="#{cadastrar.aluno.cpf}" aria-describedby="basic-addon1"/>
+			</div>
+	
+	    <br/>
+	        
+	 
+	 	<ui:remove>
+	    <div class="input-group" style="margin-left: 400px; margin-right: 400px;">
+			  <span class="input-group-addon" id="basic-addon6">Data de Nascimento</span>
+			  <p:inputMask id="date" value="#{cadastrar.aluno.data_nasc}" mask="99/99/9999"
+			  	required="true" />
+			</div> <br/>
+		</ui:remove>
+			
+			
+		<div class="input-group " style="margin-left: 400px; margin-right:400px;">
+			<span class="input-group-addon" id="basic-addon6">Data de Nascimento</span>
+        	<p:calendar id="mask" value="#{cadastrar.aluno.data_nasc}" pattern="dd/MM/yyyy" mask="true" />
+        </div>
+		
+		<br/>					
+	
+			<div class="input-group" style="margin-left: 400px; margin-right: 400px;">
+			  <p:inputText styleClass="form-control"  
+			  value="#{cadastrar.aluno.email}" aria-describedby="basic-addon2"/>
+			  <span class="input-group-addon" id="basic-addon7">@hotmal.com</span>
+			</div> 
+	
+		<br/>	 
+	
+	        <div class="input-group" style="margin-left: 400px; margin-right: 400px;">
+			  <span class="input-group-addon" id="basic-addon8">Celular</span>
+			  <p:inputText id="ignored8" required="true" styleClass="form-control" 
+			  requiredMessage="Campo Celular obrigatório"
+			  value="#{cadastrar.aluno.celular}" aria-describedby="basic-addon1"/>
+			</div> 
+			
+	    <br/>  
+	   
+	    <div class="input-group" style="margin-left: 400px; margin-right: 400px;">
+			  <span class="input-group-addon" id="basic-addon9">Conta Bancária </span>
+			  <p:inputText id="ignored9" required="true" styleClass="form-control" 
+			  value="#{cadastrar.aluno.conta}" aria-describedby="basic-addon1"/>
+			  </div>
+		  
+			  
+			  
+	    <div class="input-group" style="margin-left: 400px; margin-right: 400px;">
+			  <span class="input-group-addon" id="basic-addon10">Agência</span>
+			  <p:inputText id="ignored10" required="true" styleClass="form-control" 
+			  value="#{cadastrar.aluno.agencia}" aria-describedby="basic-addon1"/>
+			</div> 
+			 
+		    
+	
+		<div class="input-group" style="margin-left: 400px; margin-right: 400px;">
+			  <span class="input-group-addon" id="basic-addon11">Operação</span>
+			  <p:inputText id="ignored11" required="true" styleClass="form-control" 
+			  value="#{cadastrar.aluno.operacao}" aria-describedby="basic-addon1"/>
+			</div>
+			 
+			<br/>
+			
+			<div class="input-group" style="margin-left: 400px; margin-right: 400px;">
+			<span class="input-group-addon" id="basic-addon11">Senha: </span>
+			
+			  <h:outputLabel for="pwd1" />
+			
+					<p:password id="pwd1" value="#{cadastrar.aluno.senha}" style= "width: 57%" match="pwd2"
+						label="Password 1" required="true" /> 
+			</div>
+			
+			<br/>
+			
+			<div class="input-group" style="margin-left: 400px; margin-right: 400px;">	
+			<span class="input-group-addon" id="basic-addon11">Confirmar Senha: </span>	
+				<h:outputLabel for="pwd2" />
+					<p:password id="pwd2" value="#{cadastrar.aluno.senha}" style= "width: 50%"
+						label="Password 2" required="true" />
+				
+			</div>
+			
+ 
+		 
+	 <br/>
+	 
+	 <h:commandButton style="margin-left: 400px; margin-right: 400px;" value="Enviar" action="#{cadastrar.cadastrarUsuario}"/> 
+	    
+	   
+		</h:form>
+
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,54 @@
+<ui:composition template="/padrao_coordenador.xhtml" 
+xmlns="http://www.w3.org/1999/xhtml" 
+ xmlns:h="http://java.sun.com/jsf/html"  
+ xmlns:ui="http://java.sun.com/jsf/facelets"
+ xmlns:p = "http://primefaces.org/ui"
+ xmlns:f = "http://java.sun.com/jsf/core"> 
+
+
+<ui:define name="titulo">
+	Cadastre o evento que deseja publicar
+</ui:define>
+
+ <ui:define name="corpo-da-pagina">
+	 <br/> <br/>
+	 
+	 <h:form >   
+		<p:growl></p:growl>
+		
+		<div class="row">
+    		<div class="col-lg-4 col-lg-offset-4">
+		
+				<div class="text-center">
+			        <div class="input-group">
+					  <span class="input-group-addon" id="basic-addon1" > Nome do evento:</span>
+					  <p:inputText id="ignored1" required="true" styleClass="form-control"  
+					   value="#{cadastrarEventoMBean.evento.nome}" aria-describedby="basic-addon1"
+					   requiredMessage="Informe o nome do evento!"/>
+					</div>
+					<br/>
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon2" > Local:</span>
+					  <p:inputText id="ignored2" required="true" styleClass="form-control"  
+					   value="#{cadastrarEventoMBean.evento.local}" aria-describedby="basic-addon2"
+					   requiredMessage="Informe o local do evento!"/>
+					</div>
+					<br/>
+					<div class="input-group">
+					  <span class="input-group-addon" id="basic-addon3"> Data:</span>
+		        	  <p:calendar id="ignored3" required="true" inputStyleClass="form-control"  
+					    aria-describedby="basic-addon3" inputStyle="width:85%;" pattern="dd/MM/yyyy" mask="true"
+					    requiredMessage="Informe a data do evento!" value="#{cadastrarEventoMBean.evento.data}" showOn="button" />
+					</div>
+					<br/>
+					<p:commandButton value="Cadastrar" 
+					    		styleClass="btn btn-primary"
+								action="#{cadastrarEventoMBean.cadastrarEvento}" ajax="false"/>
+				</div>
+			</div>
+		</div>
+	</h:form>		
+	
+	
+	</ui:define>
+</ui:composition>

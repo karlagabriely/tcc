@@ -1,0 +1,59 @@
+<ui:composition template="/padrao_coordenador.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+	<ui:define name="titulo">
+	Digite alguma informação do artigo que procura
+</ui:define>
+
+	<ui:define name="corpo-da-pagina">
+		<br />
+		<br />
+
+		<h:form>
+			<p:growl></p:growl>
+			<b style="margin-left: 400px; margin-right: 400px;"> Informe o
+				título ou autor ou resumo do artigo que procura </b>
+			<br />
+			<br />
+
+			<div class="input-group"
+				style="margin-left: 400px; margin-right: 400px;">
+				<span class="input-group-addon" id="basic-addon1"
+					style="margim-left: 50px"> Informação:</span>
+				<p:inputText id="ignored1" required="true" styleClass="form-control"
+					value="#{pes_ArtigoMBean.pes_Artigo}"
+					aria-describedby="basic-addon1"
+					requiredMessage="Forneça alguma informação." />
+			</div>
+
+			<br />
+
+			<center>
+				<p:commandButton value="Pesquisar" styleClass="btn btn-primary"
+					action="#{pes_ArtigoMBean.pesquisarArtigo}" ajax="false" />
+			</center>
+		</h:form>
+
+		<h:form id="formulario">
+			<ui:repeat var="artigo" value="#{ pes_ArtigoMBean.artigo }">
+			
+					<h:outputLabel value="#{ artigo.titulo }" />
+					<h:commandButton value="Editar" action="#{cadastrarArtigosMBean.entrarEdicaoArtigos(artigo)}" />
+					<h:commandButton value="Remover">
+						<f:ajax
+						event="click"
+						execute="@form"
+						render="formulario"
+						listener="#{ pes_ArtigoMBean.removerArtigo(artigo) }"
+					/>	
+					</h:commandButton>
+			</ui:repeat>
+		</h:form>
+
+	</ui:define>
+</ui:composition>

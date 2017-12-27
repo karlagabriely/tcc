@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Padrão</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"
+		media="all" />
+
+	<link rel="stylesheet" type="text/css" href="css/pag_visitante.css" />
+	<link rel="icon" type="image/jpg" href="/imagens/fundo.jpg" />
+
+	<h:outputScript library="primefaces" name="jquery/jquery.js"
+		target="head" />
+	<h:outputScript library="primefaces" name="jquery/jquery-plugins.js"
+		target="head" />
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+
+
+</h:head>
+<h:body>
+
+	<div id="inicio">
+
+		<div class="media-left">
+			<a href="publico/pag_visitante.xhtml"> <img
+				style="width: 100px; height: 100px; margin-top: 70px;"
+				class="media-object" src="imagens/logo.jpg" alt="indisponível" /></a>
+		</div>
+		<div class="media-body">
+			<h2 style="margin-top: 100px; color: #990000;" class="media-heading">
+
+				<ui:insert name="titulo">  
+					Bem - vindo, coordenador. Selecione a ação que deseja executar!
+				</ui:insert>
+			</h2>
+		</div>
+
+	</div>
+	<br />
+	<br />
+	<h:form>
+	<ul class="nav  nav-tabs">
+
+		<li role="presentation"><a href="pag_visitante.xhtml">Home</a></li>
+
+		<li role="presentation"><a href="membros.xhtml"> Membros
+				cadastrados </a></li>
+
+		<li role="presentation"><a href="#"> Aprovar publicação de
+				vídeos</a></li>
+
+		<li role="presentation"><a href="#">Atualizar rating </a></li>
+
+		<li role="presentation"><a href="cad_livros.xhtml">Disponibilizar
+				livros </a></li>
+
+		<li role="presentation" class="dropdown"><a
+			class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+			aria-haspopup="true" aria-expanded="false"> Torneios <span
+				class="caret"></span>
+		</a>
+			<ul class="dropdown-menu">
+				<li role="presentation"><a href="#"> Inserir torneio </a></li>
+				<li role="presentation"><a href="#"> Enxadristas
+						confirmados </a></li>
+			</ul></li>
+			
+		<li role="presentation" class="dropdown"><a
+			class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+			aria-haspopup="true" aria-expanded="false"> Publicar <span
+				class="caret"></span>
+		</a>	
+
+		<ul class="dropdown-menu">
+			<li role="presentation"><a href="cad_artigos.xhtml"> Artigo</a></li>
+			<li role="presentation"><a href="cad_eventos.xhtml"> Evento</a></li>
+			<li role="presentation"><a href="cad_livros.xhtml"> Livro  </a></li>
+			<li role="presentation"><a href="cad_noticia.xhtml"> Notícia </a></li>
+			<li role="presentation"><a href="cad_video.xhtml"> Vídeo </a></li>
+		</ul>
+		</li>
+		
+		<li role="presentation" class="dropdown"><a
+			class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+			aria-haspopup="true" aria-expanded="false"> Pesquisar <span
+				class="caret"></span>
+		</a>	
+
+		<ul class="dropdown-menu">
+			<li role="presentation"><a href="pes_artigos.xhtml"> Artigo</a></li>
+			<li role="presentation"><a href="pes_eventos.xhtml"> Evento</a></li>
+			<li role="presentation"><a href="pes_livros.xhtml"> Livro  </a></li>
+			<li role="presentation"><a href="pes_noticia.xhtml"> Notícia </a></li>
+			<li role="presentation"><a href="pes_video.xhtml"> Vídeo </a></li>
+		</ul>
+		</li>
+		
+		<li role="presentation"><a href="cadastrar.xhtml">Cadastrar membro </a></li>
+
+		<li role="presentation"><h:commandLink action="#{loginMBean.logoff}">Logoff</h:commandLink></li>
+
+	</ul>
+	</h:form>
+	<ui:insert name="corpo-da-pagina"> Espaço para o conteúdo da tela </ui:insert>
+</h:body>
+</html>

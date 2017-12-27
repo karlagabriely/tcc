@@ -1,0 +1,40 @@
+<ui:composition template="/padrao_coordenador.xhtml" 
+xmlns="http://www.w3.org/1999/xhtml" 
+ xmlns:h="http://java.sun.com/jsf/html"  
+ xmlns:ui="http://java.sun.com/jsf/facelets"
+ xmlns:p = "http://primefaces.org/ui"
+ xmlns:f = "http://java.sun.com/jsf/core"> 
+
+
+<ui:define name="titulo">
+	Cadastre o vídeo que deseja publicar
+</ui:define>
+
+ <ui:define name="corpo-da-pagina">
+	 <br/> <br/>
+	 
+	 <h:form >   
+			<p:growl></p:growl>
+		
+	        <div class="input-group" style="margin-left: 400px; margin-right: 400px;">
+			  <span class="input-group-addon" id="basic-addon1" style = "margim-left:50px"> Título do vídeo:</span>
+			  <p:inputText id="ignored1" required="true" styleClass="form-control"  
+			   value="#{cadastroArtigosMBean.nome}" aria-describedby="basic-addon1"/>
+			</div>
+			<br/>
+			<div class="input-group" style="margin-left: 400px; margin-right: 400px;">
+			  <span class="input-group-addon" id="basic-addon2" style = "margim-left:50px"> Autor:</span>
+			  <p:inputText id="ignored2" required="true" styleClass="form-control"  
+			   value="#{cadastrar.aluno.nome}" aria-describedby="basic-addon1"/>
+			</div>
+			<br/>
+			<div class="input-group" style="margin-left: 400px; margin-right: 400px;">
+			  <span class="input-group-addon" id="basic-addon3" style = "margim-left:50px"> Descrição:</span>
+			  <p:inputText id="ignored3" required="true" styleClass="form-control"  
+			   value="#{cadastrar.aluno.nome}" aria-describedby="basic-addon1"/>
+			</div>
+	</h:form>		
+	
+	
+	</ui:define>
+</ui:composition>

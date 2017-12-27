@@ -1,0 +1,36 @@
+
+<ui:composition template="/padrao.xhtml" 
+xmlns="http://www.w3.org/1999/xhtml" 
+ xmlns:h="http://java.sun.com/jsf/html"  
+ xmlns:ui="http://java.sun.com/jsf/facelets"
+ xmlns:p = "http://primefaces.org/ui"
+ xmlns:f = "http://java.sun.com/jsf/core"> 
+
+<ui:define name="titulo">
+	Livros disponíveis
+</ui:define>
+
+ <ui:define name="corpo-da-pagina">
+	<br/> <br/>
+	<p:growl></p:growl>
+	<p:dataTable var="livro" value="#{listaLivros.livrosCadastrados}">
+    <p:column headerText="Nome">
+        <h:outputText value="#{livro.nome}" />
+    </p:column>
+ 
+    <p:column headerText="Descrição">
+        <h:outputText value="#{livro.descricao}" />
+    </p:column>
+ 
+ 	<ui:remove>
+    <p:column headerText="Arquivo">
+        <h:outputText value="#{livro.arquivo}" />
+    </p:column>
+    </ui:remove>
+ 
+    
+    
+</p:dataTable>
+	
+	</ui:define>
+</ui:composition>	
